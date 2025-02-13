@@ -29,7 +29,7 @@ function Nav({ cart, setCart }) {
             </svg>
 
             <div className="logo font-bold text-lg">
-              mystore.<span className="text-green-600">co</span>
+              mystore.<span className="text-yellow-600">co</span>
             </div>
           </div>
 
