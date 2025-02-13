@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-
 function Nav({ cart, setCart }) {
   const [isOpen, setIsOpen] = useState(false);
+  
 
   // Function to remove an item from the cart
   const removeFromCart = (id) => {
@@ -53,60 +53,135 @@ function Nav({ cart, setCart }) {
                   />
                 </svg>
 
-                <span className="text-gray-700">
-                  My Cart ({cart.length})
-                </span>
+                <span className="text-gray-700">My Cart ({cart.length})</span>
               </button>
 
               {/* Dropdown Menu */}
               {isOpen && (
-                <div className="absolute right-0 mt-2 w-[375px] bg-white shadow-md rounded-md py-2 border border-gray-200 z-50">
-                  {/* Heading */}
-                  <div className="p-4">
-                    <h5 className="border-b border-slate-300 pb-2">My Cart ({cart.length})</h5>
-                  </div>
+                // <div className="w-full h-full bg-black">
+                //   <div className="absolute right-0 mt-2 w-[375px] bg-white shadow-md rounded-md py-2 border border-gray-200 z-50">
+                //     {/* Heading */}
+                //     <div className="p-4">
+                //       <h5 className="border-b border-slate-300 pb-2">
+                //         My Cart ({cart.length})
+                //       </h5>
+                //     </div>
 
-                  {/* Card Body */}
-                  <div className="px-4">
-                    {/* if no item */}
-                    {cart.length === 0 ? (
-                      <p className="text-gray-500 text-center">
-                        Your cart is empty
-                      </p>
-                    ) 
-                    // else
-                    :(
-                      cart.map((cartItem) => (
-                        <div
-                          key={cartItem.id}
-                          className="flex justify-between pt-3 pb-3 border-b border-slate-300"
+                //     {/* Card Body */}
+                //     <div className="px-4">
+                //       {/* if no item */}
+                //       {cart.length === 0 ? (
+                //         <p className="text-gray-500 text-center">
+                //           Your cart is empty
+                //         </p>
+                //       ) : (
+                //         // else
+                //         cart.map((cartItem) => (
+                //           <div
+                //             key={cartItem.id}
+                //             className="flex justify-between pt-3 pb-3 border-b border-slate-300"
+                //           >
+                //             <div className="flex gap-6">
+                //               <div className="w-14 h-14 bg-gray-100 rounded-md overflow-hidden">
+                //                 <img
+                //                   src={cartItem.image}
+                //                   alt={cartItem.title}
+                //                   width={50}
+                //                   height={50}
+                //                   className="w-full h-full object-cover"
+                //                 />
+                //               </div>
+                //               <div className="w-[200px]">
+                //                 <p className="text-gray-700 font-bold text-sm">
+                //                   {cartItem.title}
+                //                 </p>
+                //                 <p className="text-gray-700 text-green-700 pt-2 text-md font-bold">
+                //                   ${cartItem.price}
+                //                 </p>
+                //               </div>
+                //             </div>
+                //             <button className="flex h-6 items-center hover:text-red-900 hover:bg-red-100  rounded-full cursor-pointer border border-red-700">
+                //               <span
+                //                 onClick={() => removeFromCart(cartItem.id)}
+                //                 className="text-sm text-red-700 underline px-2 py-1"
+                //               >
+                //                 Remove
+                //               </span>
+                //             </button>
+                //           </div>
+                //         ))
+                //       )}
+                //     </div>
+                //   </div>
+                // </div>
+
+                <div className="fixed inset-0 bg-black/80 z-40  flex items-center justify-center">
+                  <div className="relative mt-2 w-[400px] h-[375px]  bg-white shadow-md rounded-md py-2 border border-gray-200 z-50 overflow-y-auto">
+                    {/* Heading */}
+                    <div className="p-4 border-b border-slate-300 pb-2 flex justify-between">
+                      <h5 className="">
+                        My Cart ({cart.length})
+                      </h5>
+                      <div onClick={() => setIsOpen(false)}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="size-6"
                         >
-                          <div className="flex gap-6">
-                            <div className="w-14 h-14 bg-gray-100 rounded-md overflow-hidden">
-                              <img
-                                src={cartItem.image}
-                                alt={cartItem.title}
-                                width={50}
-                                height={50}
-                                className="w-full h-full object-cover"
-                              />
+                          <path
+                            fillRule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Card Body */}
+                    <div className="px-4">
+                      {/* if no item */}
+                      {cart.length === 0 ? (
+                        <p className="text-gray-500 text-center">
+                          Your cart is empty
+                        </p>
+                      ) : (
+                        cart.map((cartItem) => (
+                          <div
+                            key={cartItem.id}
+                            className="flex justify-between pt-3 pb-3 border-b border-slate-300"
+                          >
+                            <div className="flex gap-6">
+                              <div className="w-14 h-14 bg-gray-100 rounded-md overflow-hidden">
+                                <img
+                                  src={cartItem.image}
+                                  alt={cartItem.title}
+                                  width={50}
+                                  height={50}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                              <div className="w-[200px]">
+                                <p className="text-gray-700 font-bold text-sm">
+                                  {cartItem.title}
+                                </p>
+                                <p className="text-green-700 pt-2 text-md font-bold">
+                                  ${cartItem.price}
+                                </p>
+                              </div>
                             </div>
-                            <div className="w-[200px]">
-                              <p className="text-gray-700 font-bold text-sm">{cartItem.title}</p>
-                              <p className="text-gray-700 text-green-700 pt-2 text-md font-bold">${cartItem.price}</p>
-                            </div>
+                            <button className="flex h-6 items-center hover:text-red-900 hover:bg-red-100 rounded-full cursor-pointer border border-red-700">
+                              <span
+                                onClick={() => removeFromCart(cartItem.id)}
+                                className="text-sm text-red-700 underline px-2 py-1"
+                              >
+                                Remove
+                              </span>
+                            </button>
                           </div>
-                          <button className="flex h-6 items-center hover:text-red-900 hover:bg-red-100  rounded-full cursor-pointer border border-red-700">
-                            <span
-                              onClick={() => removeFromCart(cartItem.id)}
-                              className="text-sm text-red-700 underline px-2 py-1"
-                            >
-                              Remove
-                            </span>
-                          </button>
-                        </div>
-                      ))
-                    )}
+                        ))
+                      )}
+                    </div>
                   </div>
                 </div>
               )}
