@@ -81,7 +81,7 @@ function Nav({ cart, setCart }) {
                           key={cartItem.id}
                           className="flex justify-between pt-3 pb-3 border-b border-slate-300"
                         >
-                          <div className="flex gap-4">
+                          <div className="flex gap-6">
                             <div className="w-14 h-14 bg-gray-100 rounded-md overflow-hidden">
                               <img
                                 src={cartItem.image}
@@ -91,9 +91,9 @@ function Nav({ cart, setCart }) {
                                 className="w-full h-full object-cover"
                               />
                             </div>
-                            <div>
-                              <p className="text-gray-700 font-bold">{cartItem.title}</p>
-                              <p className="text-gray-700">${cartItem.price}</p>
+                            <div className="w-[200px]">
+                              <p className="text-gray-700 font-bold text-sm">{cartItem.title}</p>
+                              <p className="text-gray-700 text-green-700 pt-2 text-md font-bold">${cartItem.price}</p>
                             </div>
                           </div>
                           <button className="flex h-6 items-center hover:text-red-900 hover:bg-red-100  rounded-full cursor-pointer border border-red-700">
