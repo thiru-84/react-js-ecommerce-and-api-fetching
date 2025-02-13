@@ -38,7 +38,7 @@ function Items({ cart, setCart }) {
           </div>
 
           {/* Map Function */}
-          <div className="md:grid grid-cols-2 lg:grid-cols-5 gap-2 justify-center ">
+          <div className="md:grid grid-cols-2 lg:grid-cols-4 gap-2 justify-center ">
             {products.map((product) => (
               <div
                 key={product.id}
