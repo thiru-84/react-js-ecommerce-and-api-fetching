@@ -118,7 +118,7 @@ function Nav({ cart, setCart }) {
                 <div className="fixed inset-0 bg-black/80 z-40  flex items-center justify-center">
                   <div className="relative mt-2 w-[400px] h-[375px]  bg-white shadow-md rounded-md py-2 border border-gray-200 z-50 overflow-y-auto">
                     {/* Heading */}
-                    <div className="p-4 border-b border-slate-300 pb-2 flex justify-between">
+                    <div className="p-4 border-b border-slate-300 pb-2 flex justify-between ">
                       <h5 className="">
                         My Cart ({cart.length})
                       </h5>
@@ -142,9 +142,12 @@ function Nav({ cart, setCart }) {
                     <div className="px-4">
                       {/* if no item */}
                       {cart.length === 0 ? (
+                        <div className="h-[300px] flex justify-center align-center items-center">
                         <p className="text-gray-500 text-center">
                           Your cart is empty
                         </p>
+                        </div>
+                        // else
                       ) : (
                         cart.map((cartItem) => (
                           <div
