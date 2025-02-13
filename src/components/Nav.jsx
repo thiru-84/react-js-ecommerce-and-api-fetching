@@ -60,7 +60,7 @@ function Nav({ cart, setCart }) {
 
               {/* Dropdown Menu */}
               {isOpen && (
-                <div className="absolute right-0 mt-2 w-[375px] bg-white shadow-md rounded-md py-2 border border-gray-200">
+                <div className="absolute right-0 mt-2 w-[375px] bg-white shadow-md rounded-md py-2 border border-gray-200 z-50">
                   {/* Heading */}
                   <div className="p-4">
                     <h5 className="border-b border-slate-300 pb-2">My Cart ({cart.length})</h5>
