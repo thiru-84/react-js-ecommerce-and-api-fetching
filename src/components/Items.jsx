@@ -32,7 +32,7 @@ function Items({ cart, setCart }) {
           <div>
             <h2 className="text-3xl font-bold ">Deals of the Day</h2>
 
-            <p className="pb-9 pt-2 text-sm opacity-50">
+            <p className="pb-6 pt-2 text-sm opacity-50">
               Get the best deals before they are gone!
             </p>
           </div>
