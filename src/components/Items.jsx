@@ -38,11 +38,11 @@ function Items({ cart, setCart }) {
           </div>
 
           {/* Map Function */}
-          <div className="md:grid grid-cols-2 lg:grid-cols-5 justify-center bg-white">
+          <div className="md:grid grid-cols-2 lg:grid-cols-5 gap-2 justify-center ">
             {products.map((product) => (
               <div
                 key={product.id}
-                className="max-w-sm overflow-hidden border border-gray-200 flex flex-col justify-between transition-all duration-300 group"
+                className="max-w-sm overflow-hidden border border-gray-200 flex flex-col justify-between transition-all duration-300 group bg-white"
               >
                 <img
                   className="w-80 h-80 mx-auto object-cover pt-4 transition-transform duration-300 group-hover:scale-105"
