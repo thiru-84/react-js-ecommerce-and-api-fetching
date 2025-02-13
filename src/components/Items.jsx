@@ -27,7 +27,7 @@ function Items({ cart, setCart }) {
 
   return (
     <>
-      <div className=" grid  place-items-center pt-14 bg-neutral-100">
+      <div className=" grid  place-items-center pt-10 bg-neutral-100">
         <div className="flex flex-col justify-center mx-6">
           <div>
             <h2 className="text-3xl font-bold ">Deals of the Day</h2>
