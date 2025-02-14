@@ -33,12 +33,12 @@ function Nav({ cart, setCart }) {
             </div>
           </div>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-8 ">
             {/* Dropdown Trigger */}
-            <div className="relative">
+            <div className="relative ">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-2 focus:outline-none"
+                className="flex items-center gap-2 focus:outline-none cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@ function Nav({ cart, setCart }) {
                       <h5 className="">
                         My Cart ({cart.length})
                       </h5>
-                      <div onClick={() => setIsOpen(false)}>
+                      <div onClick={() => setIsOpen(false)} className="cursor-pointer">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
